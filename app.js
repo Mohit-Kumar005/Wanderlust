@@ -22,6 +22,8 @@ const userRouter = require("./routes/user.js");
 
 const dbUrl = process.env.ATLASDB_URL;
 
+console.log("DB URL:", process.env.ATLASDB_URL);
+
 main()
 .then(() => {
     console.log("Connected to MongoDB");
@@ -49,7 +51,7 @@ const store = MongoStore.create({
     touchAfter: 24 * 60 * 60,
 });
 
-store.on("error", () => {
+store.on("error", (err) => {
     console.log("ERROR IN SESSION STORE", err);
 });
 
@@ -110,6 +112,8 @@ app.use((err, req, res, next) => {
     // res.status(statusCode).send(message);
 });
 
-app.listen(8080, () => {
-    console.log("Server is running on port 8080");
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
