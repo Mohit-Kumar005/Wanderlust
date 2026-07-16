@@ -224,5 +224,3 @@ GitHub: **https://github.com/Mohit-Kumar005**
 
 ⭐ If you found this project interesting, consider giving it a star!
 
-Production-ready app deployed via **Render**  
-🔗 [Live Site](https://wanderlust-1tpg.onrender.com/listings)
